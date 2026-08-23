@@ -2,19 +2,64 @@
 <head>
   <style>
     body {
+      color: white;
       background-color: black;
     }
   </style>
 </head>
 <body>
 
+  <pre></pre>
+
+  <script>
+    // Source - https://stackoverflow.com/a/6798187
+    // Posted by alex, modified by community. See post 'Timeline' for change history
+    // Retrieved 2026-08-23, License - CC BY-SA 3.0
+
+    const pre = document.querySelector('pre');
+
+    function escrever(texto) {
+      pre.innerText = texto
+    }
+
+  </script>
+
   <script src="fengari-web.js"></script>
 
   <script type="application/lua">
-    print('olá, mundo!')
-    a = { [2] = 1, [4] = 2, [6] = 3 }
-    for i = 1, 6 do
-      print(i, a[i])
+    js = require "js"
+
+    function escrever(texto)
+      js.global.escrever(nil, texto)
     end
+
+    tabuleiro = {
+      { 0, 0, 0, },
+      { 1, 0, 0, },
+      { 0, 0, 0, },
+      { 0, 0, 2, },
+      { 2, 0, 0, },
+      { 0, 0, 3, },
+    }
+
+    function desenhar_tabuleiro(t)
+      saida = ''
+      for i = 1, #t do
+        for j = 1, #t[i] do
+          saida = saida .. t[i][j] .. ' '
+        end
+        saida = saida .. '\n'
+      end
+      escrever(saida)
+    end
+
+    desenhar_tabuleiro(tabuleiro)
+
+    -- print('olá, mundo!')
+    -- a = { [2] = 1, [4] = 2, [6] = 3 }
+    -- for i = 1, 6 do
+      -- print(i, a[i])
+    -- end
   </script>
+
 </body>

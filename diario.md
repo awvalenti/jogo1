@@ -19,3 +19,20 @@ lua em js.
 
 já este componente do anterior teve seu último lançamento em 2018:
 https://github.com/fengari-lua/fengari-web
+
+# 260823
+
+## objetivos
+
+- [x] verificar se licença de fengari-web é compatível com nossos objetivos neste
+  projeto
+  - caso não seja, encontrar uma alternativa que seja compatível
+- [.] fazer uma prova de conceito um pouco maior fazendo um minijogo em lua rodar
+  - [x] de alguma forma viabilizar a comunicação entre o código javascript e o
+        código lua, possivelmente com document.write do js
+- possível objetivo: tentar mudar para outro ambiente de execução e ver se o
+  resultado se mantém intacto
+
+## anotações
+
+licença do fengari-web: mit. tá tranquilo.
