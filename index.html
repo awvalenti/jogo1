@@ -22,6 +22,10 @@
       pre.innerText = texto
     }
 
+    document.addEventListener('keydown', () => {
+      executarMovimento();
+    });
+
   </script>
 
   <script src="fengari-web.js"></script>
@@ -42,24 +46,38 @@
       { 0, 0, 3, },
     }
 
-    function desenhar_tabuleiro(t)
+    function desenhar_tabuleiro()
       saida = ''
-      for i = 1, #t do
-        for j = 1, #t[i] do
-          saida = saida .. t[i][j] .. ' '
+      for i = 1, #tabuleiro do
+        for j = 1, #tabuleiro[i] do
+          saida = saida .. tabuleiro[i][j] .. ' '
         end
         saida = saida .. '\n'
       end
       escrever(saida)
     end
 
-    desenhar_tabuleiro(tabuleiro)
+    function executar_movimento()
+      linha_inicial = 2
+      coluna_inicial = 1
 
-    -- print('olá, mundo!')
-    -- a = { [2] = 1, [4] = 2, [6] = 3 }
-    -- for i = 1, 6 do
-      -- print(i, a[i])
-    -- end
+      linha = linha_inicial
+      coluna = coluna_inicial
+      while tabuleiro[linha + 1][coluna] ~= 2 do
+        linha = linha + 1
+      end
+      linha_final = linha
+      coluna_final = coluna
+
+      tabuleiro[linha_inicial][coluna_inicial] = 0
+      tabuleiro[linha_final][coluna_final] = 1
+
+      desenhar_tabuleiro()
+    end
+
+    js.global.executarMovimento = executar_movimento
+
+    desenhar_tabuleiro()
   </script>
 
 </body>
