@@ -2,6 +2,10 @@ js = require 'js'
 tabuleiro = require 'logica.tabuleiro'
 escrever = require 'graficos.escrever'
 
+Classe = require 'Classe'
+objeto = Classe:new()
+objeto:metodo1()
+
 function desenhar_tabuleiro()
   saida = ''
   for i = 1, #tabuleiro do

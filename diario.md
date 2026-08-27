@@ -81,14 +81,42 @@ funciona.
 
 ## objetivos
 
-- […] continuar separando os arquivos lua
-- [ ] estudar classes, módulos, escopo etc. para ver o que será útil
+- [x] organizar carregamento de módulos lua
+- [x] estudar classes, módulos, escopo etc. para ver o que será útil
 - [ ] desenvolver mais a lógica do jogo
 
 
 ## anotações
 
+para criar classes, um jeito é assim:
+
+```lua
+Classe = {}
+
+function Classe:new()
+  ret = { chave1 = 'valor1', chave2 = 'valor2' }
+  self.__index = self
+  return setmetatable(ret, self)
+end
+
+function Classe:metodo1()
+  print(self.chave1, self.chave2)
+end
+
+objeto = Classe:new()
+objeto.metodo1()
+```
+
+só que não funcionou.
+
+instalei lua na máquina com:
+```sh
+apt install lua5.4
+```
+
+descobri: eu estava chamando com . em vez de : - o certo é `objeto:metodo1()`
 
 ## próximos passos
 
+- [ ] desenvolver mais a lógica do jogo, possivelmente usando classes
 
