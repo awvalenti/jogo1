@@ -40,3 +40,39 @@ licença do fengari-web: mit. tá tranquilo.
 - dividir o código lua em arquivos separados
 - desenvolver mais a lógica do jogo
 - eliminar estado global
+
+# 260826
+
+## objetivos
+
+- [x] dividir o código lua em arquivos separados
+- [ ] desenvolver mais a lógica do jogo
+- [ ] eliminar estado global
+
+## anotações
+
+ao migrar o script de dentro do html para arquivo externo .lua, passa a ter
+problema com cors em file://. por sorte, firefox já faz automaticamente o lance
+de https://firefox.localhost/ . testei no chrome e não funcionou, nem em file:
+nem nesse mesmo endereço que funciona no firefox.
+
+ao fazer require dentro de um arquivo lua para outro arquivo lua, se tudo
+estiver na raiz do projeto, não precisa colocar o caminho, basta o nome base do
+arquivo (sem .lua). se não estiverem na raiz, aí tem que colocar o caminho
+completo iniciando sem barra e pode separar as pastas com ponto ou barra.
+exemplos:
+```lua
+tabuleiro = require 'src.lua.tabuleiro'
+escrever = require 'src/lua/escrever'
+```
+
+outra opção é alterar o require.path para olhar para algum diretório. por
+exemplo, pode-se fazê-lo olhar para a raiz do código lua, o que faz bastante
+sentido. por padrão, a raiz do require.path é o diretório onde fica o arquivo
+html que inclui um script lua. é esquisito, mas é assim que o fengari-web
+funciona.
+
+## próximos passos
+
+- [ ] desenvolver mais a lógica do jogo
+- [ ] eliminar estado global
