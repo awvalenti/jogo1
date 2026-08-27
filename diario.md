@@ -76,3 +76,19 @@ funciona.
 
 - [ ] desenvolver mais a lógica do jogo
 - [ ] eliminar estado global
+
+# 260827
+
+## objetivos
+
+- […] continuar separando os arquivos lua
+- [ ] estudar classes, módulos, escopo etc. para ver o que será útil
+- [ ] desenvolver mais a lógica do jogo
+
+
+## anotações
+
+
+## próximos passos
+
+

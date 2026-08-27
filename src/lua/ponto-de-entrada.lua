@@ -1,7 +1,3 @@
--- inclui diretório atual como raiz, permitindo fazer:
--- require 'modulo'
-package.path = "../../../src/lua/?.lua;" .. package.path
-
 js = require 'js'
 tabuleiro = require 'logica.tabuleiro'
 escrever = require 'graficos.escrever'
