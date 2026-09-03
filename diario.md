@@ -118,5 +118,39 @@ descobri: eu estava chamando com . em vez de : - o certo é `objeto:metodo1()`
 
 ## próximos passos
 
+- desenvolver mais a lógica do jogo, possivelmente usando classes
+
+
+# 260902
+
+## objetivos
+
+- [x] verificar se, se não usar palavra-chave local, vars ficam globais
+- [x] verificar se isso também se aplica a funções
 - [ ] desenvolver mais a lógica do jogo, possivelmente usando classes
+
+## anotações
+
+este é o endereço que o firefox provê para evitar file://: https://firefox.localhost/index.html
+
+sim, somente escrevendo explicitamente local o símbolo fica local. do contrário,
+será global. funções também precisam ser declaradas como locais, se forem
+funções soltas, fora de tabelas. se forem funções dentro de tabela (métodos), aí
+serão locais automaticamente, e nem poderá usar a palavra reservada local.
+
+para referenciar métodos, tem que ser tab.metodo, não tab:metodo. essa última
+forma só pode ser usada para chamar o método.
+
+variáveis locais em funções também precisam do local, senão serão globais.
+
+em fors, não pode colocar local, variáveis já são locais.
+
+no construtor (new), não se pode usar self para se referir ao objeto sendo
+criado. deve-se usar a variável local correspondente, que até o momento eu
+chamei de ret.
+
+## próximos passos
+
+- melhorar a parte que atribui função a js.global.executarMovimento
+- desenvolver mais a lógica do jogo usando classes
 
