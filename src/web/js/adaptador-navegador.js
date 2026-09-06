@@ -1,7 +1,7 @@
 const elementoPre = document.querySelector('pre');
 
-function atualizarTabuleiro(tabuleiroEmTexto) {
+function desenharTabuleiro(tabuleiroEmTexto) {
   elementoPre.innerText = tabuleiroEmTexto
 }
 
-document.addEventListener('keydown', () => window.executarMovimento());
+document.addEventListener('keydown', () => window.processarEntrada('baixo'));

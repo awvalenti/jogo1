@@ -154,3 +154,17 @@ chamei de ret.
 - melhorar a parte que atribui função a js.global.executarMovimento
 - desenvolver mais a lógica do jogo usando classes
 
+
+# 260906
+
+## objetivos
+
+- […] melhorar a parte que atribui função a js.global.executarMovimento
+- [ ] desenvolver mais a lógica do jogo usando classes
+
+## anotações
+
+
+## próximos passos
+
+

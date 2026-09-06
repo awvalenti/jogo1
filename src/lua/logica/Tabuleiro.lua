@@ -27,7 +27,9 @@ function Tabuleiro:em_texto()
   return saida
 end
 
-function Tabuleiro:mover()
+function Tabuleiro:mover(direcao)
+  if direcao ~= 'baixo' then return end
+
   local linha_inicial = 2
   local coluna_inicial = 1
   local linha = linha_inicial
