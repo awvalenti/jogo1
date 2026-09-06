@@ -159,12 +159,95 @@ chamei de ret.
 
 ## objetivos
 
-- […] melhorar a parte que atribui função a js.global.executarMovimento
+- […] fazer testes automatizados e criar principais lógicas do jogo
+  - [x] instalar busted
+    - [x] instalar e configurar luarocks
 - [ ] desenvolver mais a lógica do jogo usando classes
+- [ ] melhorar a parte que atribui função a js.global.executarMovimento
 
 ## anotações
 
+tive dificuldade para melhorar a parte da função executarmovimento. está confusa
+a arquitetura atual e não vejo muito como melhorá-la. decidi o seguinte: como
+eu já fiz as provas de conceito necessárias, não preciso mais validar nada. vou
+começar a desenvolver o jogo do zero e do jeito mais organizado. vou fazer um
+tddzinho para criar a lógica básica do jogo primeiro. para isso, preciso
+escolher uma ferramenta de testes automatizados em lua.
+
+pesquisei sobre isso e descobri que o próprio criador da linguagem faz testes
+automatizados em lua puro, só usando a função assert e algumas outras. procurei
+opções e achei uma tal de busted, similar a rspec (ruby), jasmine/jest (js) etc.
+para usá-la, posso instalar pelo luarocks. fui ver como seria.
+
+instalei pelo apt e foi instalado lua5.1 junto. achei estranho. mas precisou
+mesmo, pelo jeito. a versão que tem no repositório do apt é meio antiga, 3.8.0.
+porém, a alternativa seria baixar o fonte e fazer um sudo make install da vida,
+dependendo ainda de outros pacotes para rodar o make. desisti e fiquei com o do
+apt, mesmo. ainda dá pra rodar luarocks-5.4, mas aí fica faltando um tal de
+LUA_INCDIR. vou seguir só com o luarocks, mesmo.
+
+a documentação não pareceu grande coisa, pois vi em outro lugar que existe o
+luarocks init, similar ao npm init do node. executei. vamos ver.
+
+luarocks install busted funcionou, mas instalou umas 8 outras coisas. lembranças
+do npm... espero que pare por aí!
+
+todas as dependências do busted juntas somam 3mb. até agora, tá tranquilo!
+
+tem muitas formas de instalar dependências com luarocks. aparentemente, a melhor
+opção foi:
+```sh
+cd src/lua
+luarocks init
+luarocks install --pin busted
+```
+
+muita complicação aí com versões de lua. o luarocks do jeito padrão definiu que
+meu projeto usa lua5.1. não curti. fui ver e o fengari-web usa lua5.3.
+
+blz, se usar lua5.3, até o luarocks consegue usar, ele não exige instalar o 5.1.
+
+mas não funciona, por falta do LUA_INCDIR configurado. se instalar o 5.1, a
+saída do luarocks é:
+
+```
+Configuration:
+   Lua:
+      Version    : 5.1
+      Interpreter: /usr/bin/lua5.1 (ok)
+      LUA_DIR    : /usr (ok)
+      LUA_BINDIR : /usr/bin (ok)
+      LUA_INCDIR : /usr/include/lua5.1 (ok)
+      LUA_LIBDIR : /usr/lib/x86_64-linux-gnu (ok)
+
+   Configuration files:
+      System  : /etc/luarocks/config-5.1.lua (ok)
+      User    : /home/andre/.luarocks/config-5.1.lua (not found)
+
+   Rocks trees in use:
+      /home/andre/.luarocks
+      /usr/local
+```
+
+achei
+[aqui](https://linuxvox.com/blog/lua-5-3-is-installed-but-i-can-t-locate-the-correct-lua-h/):
+faltava o pacote liblua5.3-dev.
+
+```sh
+luarocks init --lua-versions=5.3
+```
+
+parece que encontrei finalmente um jeito a la npm install de configurar as
+dependências do projetoa. é assim:
+1. `luarocks init` cria os arquivos necessários, principalmente `*.luarocks`
+2. você edita manualmente o `*.luarocks` para incluir dependências
+3. você instala as dependências com `luarocks install --only-deps --pin --local
+   *.rockspec`
+4. para rodar os testes, primeiro `eval "$(luarocks path --bin)"`, depois
+   `busted`
 
 ## próximos passos
 
+- […] fazer testes automatizados e criar principais lógicas do jogo
+- [ ] desenvolver mais a lógica do jogo usando classes
 
