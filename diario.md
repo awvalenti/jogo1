@@ -246,6 +246,9 @@ dependências do projetoa. é assim:
 4. para rodar os testes, primeiro `eval "$(luarocks path --bin)"`, depois
    `busted`
 
+busted procura uma pasta `spec` e arquivos dentro dela `_spec.lua`. criei um
+esboço de teste lá.
+
 ## próximos passos
 
 - […] fazer testes automatizados e criar principais lógicas do jogo
