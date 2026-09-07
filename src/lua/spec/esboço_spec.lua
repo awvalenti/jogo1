@@ -1,5 +1,0 @@
-describe('esboço', function()
-  it('valida instalação do busted', function()
-    assert.True(true)
-  end)
-end)

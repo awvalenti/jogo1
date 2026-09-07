@@ -254,3 +254,64 @@ esboço de teste lá.
 - […] fazer testes automatizados e criar principais lógicas do jogo
 - [ ] desenvolver mais a lógica do jogo usando classes
 
+
+# 260907
+
+## objetivos
+
+- […] fazer testes automatizados e criar principais lógicas do jogo
+- [ ] desenvolver mais a lógica do jogo usando classes
+
+## anotações
+
+consegui fazer um esboço mais realista, que chama um método e faz um pequeno
+processamento nas strings. descobri que 'str'.metodo não funciona, mas
+('str').metodo, sim.
+
+quis fazer um observador de mudanças na pasta para chamar o busted
+automaticamente ao salvar arquivos. para isso, não encontrei solução pronta e vi
+que tem um jeito com inotify-tools, que precisei instalar.
+
+o comando que estou usando, que pisca pouco o terminal, é:
+```sh
+inotifywait -r -e close_write,create,delete,move -m . | while read -r _; do echo -e "\033[H\033[2J"; busted; done
+```
+
+fui dar uma olhada em como eu havia feito no passado o tabuleiro. achei no ramo
+dev-ts que eu convertia uma string como esta:
+
+```
+    - - - - - -
+    - o - - - -
+    - - - - - -
+    - - - - - -
+    - p - o - -
+    - - - - - -
+```
+
+em uma matriz. vou fazer isso aqui também.
+
+passos:
+1. eliminar espaços sobressalentes
+2. dividir a string por quebras de linha
+3. atribuir cada caractere a um elemento da matriz
+
+como evitar fechar o repl de lua com ctrl c? ainda não descobri. mas parece que
+fizeram um repl mais usável por razões como essa: https://github.com/hoelzro/lua-repl
+
+cumprido parcialmente o objetivo. ficamos com o construtor que recebe em_texto,
+dimensoes, em_texto e mover. mover ainda está imperativo, alterando o estado do
+objeto. futuramente, mudaremos para criar um novo tabuleiro, sendo então
+imutável.
+
+tivemos muitos problemas para trabalhar com strings e acabamos desistindo de
+usar [[ ]], porque enche de espaços e quebras de linha e dificulta o controle
+disso depois.
+
+## próximos passos
+
+- integrar com javascript para exibir na tela
+- movimentar nas outras direções
+- encerrar a fase ao alcançar o alvo
+- tornar o tabuleiro imutável
+
