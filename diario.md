@@ -339,3 +339,24 @@ como uma fase começa.
 - encerrar a fase ao alcançar o alvo
 - novas classes: elemento e posição
 
+
+# 260916
+
+## objetivos
+
+- [x] 'classe' posição
+
+## anotações
+
+feito um script tdd.sh para fazer tdd contínuo.
+
+feita a 'classe' posição e mapa modificado para usá-la.
+
+
+## próximos passos
+
+- nova classe: elemento
+- integrar com javascript para exibir na tela
+- movimentar nas outras direções
+- encerrar a fase ao alcançar o alvo
+

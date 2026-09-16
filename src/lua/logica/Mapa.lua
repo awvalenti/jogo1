@@ -1,3 +1,5 @@
+local Posicao = require('logica.Posicao')
+
 local Mapa = {}
 
 function Mapa:new(em_texto)
@@ -27,9 +29,8 @@ function Mapa:new(em_texto)
   return setmetatable(ret, self)
 end
 
-function Mapa:obter(linha, coluna)
-  local armazenado = self.matriz[linha][coluna]
-  return armazenado == nil and '-' or armazenado
+function Mapa:obter(posicao)
+  return self.matriz[Posicao.linha(posicao)][Posicao.coluna(posicao)] or '-'
 end
 
 return Mapa

@@ -15,8 +15,13 @@ apt install liblua5.3-dev lua5.3 luarocks
 luarocks install --only-deps --pin --local *.rockspec
 ```
 
-### testes automatizados
+### testes automatizados: rodar uma vez
 ```sh
 eval "$(luarocks path --bin)"
 busted
+```
+
+### testes automatizados: tdd contínuo
+```sh
+./tdd.sh
 ```
