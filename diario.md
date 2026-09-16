@@ -315,3 +315,27 @@ disso depois.
 - encerrar a fase ao alcançar o alvo
 - tornar o tabuleiro imutável
 
+
+# 260915
+
+## objetivos
+
+- [x] classe mapa
+- [x] (de certa forma) tornar o tabuleiro imutável
+
+## anotações
+
+classe mapa para apenas converter a representação em string de um tabuleiro em
+uma representação mais eficiente em uso de memória e facilidade de acesso. a
+classe tabuleiro irá usar um mapa para saber como uma fase começa, e depois irá
+armazenando modificações no estado do jogo. o mapa será imutável, representando
+como uma fase começa.
+
+
+## próximos passos
+
+- integrar com javascript para exibir na tela
+- movimentar nas outras direções
+- encerrar a fase ao alcançar o alvo
+- novas classes: elemento e posição
+
