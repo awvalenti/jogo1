@@ -11,6 +11,16 @@ describe('Tabuleiro', function()
     '- o - - - \n' ..
     '')
 
+  -- local tabuleiro = Tabuleiro:new(Mapa:new(
+  --   '- - - - - \n' ..
+  --   '- p - - - \n' ..
+  --   '- - - - - \n' ..
+  --   '- - - - - \n' ..
+  --   '- o - o - \n' ..
+  --   '- o - - - \n' ..
+  --   ''
+  -- ))
+
   context('dimensoes', function()
     it('informa quantidade de linhas e colunas', function()
       assert.same({ 6, 5 }, { tabuleiro:dimensoes() })

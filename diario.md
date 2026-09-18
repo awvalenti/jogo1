@@ -360,3 +360,30 @@ feita a 'classe' posição e mapa modificado para usá-la.
 - movimentar nas outras direções
 - encerrar a fase ao alcançar o alvo
 
+
+# 260917
+
+## objetivos
+
+- […] classe tabuleiro usando classe mapa
+- [ ] integrar com javascript para exibir na tela
+
+## anotações
+
+fui tentar fazer tabuleiro usar mapa e já deparei com a falta de quantidade de
+linhas e de colunas (ou altura e largura). fui incluir isso em mapa e vi que deu
+ruim, porque estava calculando 7 linhas quando deveriam ser 6. estou cogitando
+não usar mais uma tabela como matriz verdadeira, e, sim, armazenar como chaves
+da tabela somente as posições, no formato que estou usando, de números como 201
+para linha 2, coluna 1 e 314 para linha 3, coluna 14.
+
+deu um trabalho maior do que o esperado para acertar a classe mapa para
+saber informar altura e largura. o algoritmo de conversão da string do mapa para
+objeto mapa está meio grande. mas poderá ser refatorado mais vezes mais para a
+frente, caso encontremos formas mais simples.
+
+## próximos passos
+
+os mesmos objetivos.
+
+
