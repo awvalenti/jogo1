@@ -5,10 +5,9 @@ local Mapa = {}
 function Mapa:new(em_texto)
   self.__index = self
 
-  local lin = 0
+  local lin = 1
   local col = 0
-  local linha_em_construcao = {}
-  local matriz = {}
+  local elementos = {}
   local altura = 0
   local largura = 0
 
@@ -16,28 +15,26 @@ function Mapa:new(em_texto)
     local caractere = em_texto:sub(i, i)
     if caractere == 'j' or caractere == 'o' then
       col = col + 1
-      linha_em_construcao[col] = caractere
+      elementos[Posicao.gerar(lin, col)] = caractere
     elseif caractere == '-' then
       col = col + 1
     elseif caractere == '\n' then
-      lin = lin + 1
-      matriz[lin] = linha_em_construcao
       altura = lin
       largura = col
-      linha_em_construcao = {}
+      lin = lin + 1
       col = 0
     end
   end
 
   return setmetatable({
-    _matriz = matriz,
+    _elementos = elementos,
     _altura = altura,
     _largura = largura,
   }, self)
 end
 
 function Mapa:obter(posicao)
-  return self._matriz[Posicao.linha(posicao)][Posicao.coluna(posicao)] or '-'
+  return self._elementos[posicao] or '-'
 end
 
 function Mapa:altura()
