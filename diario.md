@@ -387,3 +387,17 @@ frente, caso encontremos formas mais simples.
 os mesmos objetivos.
 
 
+
+# 260919
+
+## objetivos
+
+- [x] atualizar classe tabuleiro
+- [ ] integrar com javascript para exibir na tela
+
+## anotações
+
+
+## próximos passos
+
+

@@ -1,25 +1,17 @@
 local Tabuleiro = require('logica.Tabuleiro')
+local Mapa = require('logica.Mapa')
 
 describe('Tabuleiro', function()
 
-  local tabuleiro = Tabuleiro:new(
+  local tabuleiro = Tabuleiro:new(Mapa:new(
     '- - - - - \n' ..
-    '- p - - - \n' ..
+    '- j - - - \n' ..
     '- - - - - \n' ..
     '- - - - - \n' ..
     '- o - o - \n' ..
     '- o - - - \n' ..
-    '')
-
-  -- local tabuleiro = Tabuleiro:new(Mapa:new(
-  --   '- - - - - \n' ..
-  --   '- p - - - \n' ..
-  --   '- - - - - \n' ..
-  --   '- - - - - \n' ..
-  --   '- o - o - \n' ..
-  --   '- o - - - \n' ..
-  --   ''
-  -- ))
+    ''
+  ))
 
   context('dimensoes', function()
     it('informa quantidade de linhas e colunas', function()
@@ -31,7 +23,7 @@ describe('Tabuleiro', function()
     it('converte estado atual do tabuleiro para texto', function()
       assert.equals(
         '- - - - - \n' ..
-        '- p - - - \n' ..
+        '- j - - - \n' ..
         '- - - - - \n' ..
         '- - - - - \n' ..
         '- o - o - \n' ..
@@ -48,7 +40,7 @@ describe('Tabuleiro', function()
         '- - - - - \n' ..
         '- - - - - \n' ..
         '- - - - - \n' ..
-        '- p - - - \n' ..
+        '- j - - - \n' ..
         '- o - o - \n' ..
         '- o - - - \n' ..
       '', tabuleiro:em_texto())
