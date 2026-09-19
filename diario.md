@@ -393,7 +393,7 @@ os mesmos objetivos.
 ## objetivos
 
 - [x] atualizar classe tabuleiro
-- [ ] integrar com javascript para exibir na tela
+- […] integrar com javascript para exibir na tela
 
 ## anotações
 

@@ -1,5 +1,5 @@
-local Tabuleiro = require('logica.Tabuleiro')
-local Mapa = require('logica.Mapa')
+local Tabuleiro = require 'logica.Tabuleiro'
+local Mapa = require 'logica.Mapa'
 
 describe('Tabuleiro', function()
 

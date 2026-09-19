@@ -1,4 +1,4 @@
-local Posicao = require('logica.Posicao')
+local Posicao = require 'logica.Posicao'
 
 local Mapa = {}
 
