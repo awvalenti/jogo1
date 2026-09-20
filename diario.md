@@ -397,7 +397,46 @@ os mesmos objetivos.
 
 ## anotações
 
+perguntei pra ia como integrar lua com js. a opção mais simples é aquela que já
+usamos: código lua injeta uma função lua no objeto global do javascript. depois,
+basta o js chamá-la. outra forma possivelmente interessante para nós é esta:
+
+```lua
+function ao_clicar(evento)
+    print("Botão clicado")
+end
+
+local js = require("js")
+
+js.global.document
+    :getElementById("botao")
+    :addEventListener("click", ao_clicar)
+```
+
+na opção acima, código lua faz ele mesmo o tratamento dos eventos javascript.
+
+busted está precisando de duas novas funcionalidades:
+1. testes parametrizados: vários casos de teste/entradas para a mesma lógica.
+   equivalente a @CsvSource do java/junit e describe.each do jest.
+2. formatador de saída dos testes hierárquico, que mostre a mesma árvore que
+   você escreve usando describe, context e it.
+
+quem sabe eu não me animo a adicionar essas funcionalidades ao busted e abrir
+uns pull requests para o projeto?
+
+melhorei o tdd.sh.
+
+lua foi a única linguagem que eu já vi na vida que não permite usar + unário,
+por exemplo: `local incremento = +1`. tudo bem que é implícito e desnecessário,
+mas em algumas situações ajuda a dar clareza e simetria com o -1.
+
+acabei tendo uma trabalheira para fazer a lógica de movimento na classe
+tabuleiro. achei que pudesse associar incrementos de direções facilmente usando
+a própria 'classe' posição. só que não, porque, com essa lógica de multiplicar
+por 100, ela não funciona com números negativos.
 
 ## próximos passos
 
+- [ ] adicionar ao modelo de item de diário uma sessão realizações
+- [ ] integrar com javascript para exibir na tela
 

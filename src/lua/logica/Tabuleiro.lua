@@ -43,20 +43,27 @@ function Tabuleiro:em_texto()
 end
 
 function Tabuleiro:mover(direcao)
-  if direcao ~= 'baixo' then return end
+  local inc = ({
+    ESQUERDA = { 0, -1 },
+    DIREITA = { 0, 1 },
+    BAIXO = { 1, 0 },
+    CIMA = { -1, 0 },
+  })[direcao]
 
   local linha = Posicao.linha(self.pos_jogador)
   local coluna = Posicao.coluna(self.pos_jogador)
   local m = self.matriz
 
   m[Posicao.linha(self.pos_jogador)][Posicao.coluna(self.pos_jogador)] = '-'
-
-  while m[linha + 1][coluna] ~= 'o' do
-    linha = linha + 1
+  while true do
+    local proxima_linha = linha + inc[1]
+    local proxima_coluna = coluna + inc[2]
+    if m[proxima_linha][proxima_coluna] == 'o' then break end
+    linha = proxima_linha
+    coluna = proxima_coluna
   end
-  self.linha_jogador = linha
-  self.coluna_jogador = coluna
-  m[self.linha_jogador][self.coluna_jogador] = 'j'
+  self.pos_jogador = Posicao.gerar(linha, coluna)
+  m[Posicao.linha(self.pos_jogador)][Posicao.coluna(self.pos_jogador)] = 'j'
 end
 
 return Tabuleiro
