@@ -440,3 +440,20 @@ por 100, ela não funciona com números negativos.
 - [ ] adicionar ao modelo de item de diário uma sessão realizações
 - [ ] integrar com javascript para exibir na tela
 
+
+# 260922
+
+## objetivos
+
+- [x] melhorar classe posição:
+  - [x] permitir número negativo -1
+  - [x] permitir soma de posições
+  - [x] verificação de posição válida (dentro dos limites do mapa)
+- [ ] tabuleiro: lógica de movimentação evitando posições inválidas
+
+## anotações
+
+
+## próximos passos
+
+
