@@ -449,11 +449,27 @@ por 100, ela não funciona com números negativos.
   - [x] permitir número negativo -1
   - [x] permitir soma de posições
   - [x] verificação de posição válida (dentro dos limites do mapa)
-- [ ] tabuleiro: lógica de movimentação evitando posições inválidas
+- [x] tabuleiro: lógica de movimentação evitando posições inválidas
 
 ## anotações
 
+tudo certo! só mais uma coisa que eu quero fazer antes de fechar por hoje:
+eliminar matriz do tabuleiro, usar tabela tipo hash, mesmo. acredito que
+simplificará bastante alguns trechos de código. vamos ver se será o caso mesmo.
+
+existe um bug sutil: se movimento não for possível desde o início (exemplo: já
+está de cara com um obstáculo ou parede/borda do tabuleiro), o código parece que
+irá perder a posição do jogador. é preciso não presumir que um movimento
+acontecerá.
+
+não consegui terminar isso. deixei o progresso guardado no stash.
 
 ## próximos passos
+
+- [ ] anotar bug sutil para corrigir depois
+- [ ] possivelmente retomar tentativa no stash de transformar matriz em tabela
+      hash
+- [ ] retomar integração de lua com js
+  - [ ] adicionar tratamentos de teclado para as outras direções
 
 
