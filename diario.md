@@ -473,3 +473,20 @@ não consegui terminar isso. deixei o progresso guardado no stash.
   - [ ] adicionar tratamentos de teclado para as outras direções
 
 
+
+# 260923
+
+## objetivos
+
+- [x] possivelmente retomar tentativa no stash de transformar matriz em tabela
+      hash
+- [x] anotar bug sutil para corrigir depois
+
+## anotações
+
+
+## próximos passos
+
+- [ ] retomar integração de lua com js
+  - [ ] adicionar tratamentos de teclado para as outras direções
+
