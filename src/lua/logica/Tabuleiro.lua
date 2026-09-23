@@ -44,25 +44,22 @@ end
 
 function Tabuleiro:mover(direcao)
   local inc = ({
-    ESQUERDA = { 0, -1 },
-    DIREITA = { 0, 1 },
-    BAIXO = { 1, 0 },
-    CIMA = { -1, 0 },
+    ESQUERDA = Posicao.gerar(0, -1),
+    DIREITA = Posicao.gerar(0, 1),
+    BAIXO = Posicao.gerar(1, 0),
+    CIMA = Posicao.gerar(-1, 0),
   })[direcao]
 
-  local linha = Posicao.linha(self.pos_jogador)
-  local coluna = Posicao.coluna(self.pos_jogador)
   local m = self.matriz
+
+  local altura, largura = self:dimensoes()
 
   m[Posicao.linha(self.pos_jogador)][Posicao.coluna(self.pos_jogador)] = '-'
   while true do
-    local proxima_linha = linha + inc[1]
-    local proxima_coluna = coluna + inc[2]
-    if m[proxima_linha][proxima_coluna] == 'o' then break end
-    linha = proxima_linha
-    coluna = proxima_coluna
+    local proxima_pos = self.pos_jogador + inc
+    if not Posicao.eh_valida(proxima_pos, altura, largura) or m[Posicao.linha(proxima_pos)][Posicao.coluna(proxima_pos)] == 'o' then break end
+    self.pos_jogador = proxima_pos
   end
-  self.pos_jogador = Posicao.gerar(linha, coluna)
   m[Posicao.linha(self.pos_jogador)][Posicao.coluna(self.pos_jogador)] = 'j'
 end
 
