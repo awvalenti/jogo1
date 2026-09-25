@@ -490,3 +490,23 @@ não consegui terminar isso. deixei o progresso guardado no stash.
 - [ ] retomar integração de lua com js
   - [ ] adicionar tratamentos de teclado para as outras direções
 
+
+# 260924
+
+## objetivos
+
+- [x] simplificar testes de tabuleiro
+- [x] incluir novos testes para resolver bugs
+
+## anotações
+
+acabei criando também o módulo Direcao. é basicamente um enum.
+
+testes de lógica de movimentação de tabuleiro estão super parecidos. posso
+refatorar para fazer meio que um gerador de testes, passando apenas estado
+inicial, direção(ões) e estado final.
+
+## próximos passos
+
+- [ ] integrar com javascript
+
