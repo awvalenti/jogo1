@@ -517,17 +517,22 @@ inicial, direção(ões) e estado final.
 
 - [x] integrar com javascript (corrigir integração que parou de funcionar)
 - [x] aceitar 4 direções
-- [ ] especificar (com teste) que Posicao permite de 0 a 98
+- [x] especificar (com teste) que Posicao permite de 0 a 99
 
 
 ## anotações
 
 página web não estava funcionando porque estava usando a direcao antiga, que era
-em texto. agora, é um enum contendo objetos do tipo Posicao. resolvido isso.
+em texto. agora, é um enum contendo objetos do tipo posicao. resolvido isso.
 agora, vamos fazer aceitar qualquer das 4 direções.
 
 devo criar um teste que especifique a possibilidade de converter direção em
 texto para objeto? estou usando assim, mas não tem teste pra isso.
+
+posicao tem que aceitar de 0 a 99, não 98. é tabuleiro que só pode trabalhar com
+mapas de dimensão mínima 1 e máxima 98, pois assim ele poderá percorrer até as
+posições 0 e 99. mas isso não será um problema na prática, então eu só
+especifiquei posição, mesmo.
 
 ## próximos passos
 

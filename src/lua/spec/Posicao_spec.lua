@@ -8,9 +8,14 @@ describe('Posicao', function()
       assert.equals(102, Posicao.gerar(1, 2))
     end)
 
-    it('aceita linha e coluna com até dois dígitos decimais', function()
-      assert.equals(9876, Posicao.gerar(98, 76))
-      assert.equals(9999, Posicao.gerar(99, 99))
+    it('aceita linha e coluna com valor mínimo 0', function()
+      assert.equals(0001, Posicao.gerar(0, 1))
+      assert.equals(0100, Posicao.gerar(1, 0))
+    end)
+
+    it('aceita linha e coluna com valor máximo 99', function()
+      assert.equals(9988, Posicao.gerar(99, 88))
+      assert.equals(8899, Posicao.gerar(88, 99))
     end)
 
   end)
