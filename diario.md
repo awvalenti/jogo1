@@ -510,3 +510,25 @@ inicial, direção(ões) e estado final.
 
 - [ ] integrar com javascript
 
+
+# 261031
+
+## objetivos
+
+- [x] integrar com javascript (corrigir integração que parou de funcionar)
+- [x] aceitar 4 direções
+- [ ] especificar (com teste) que Posicao permite de 0 a 98
+
+
+## anotações
+
+página web não estava funcionando porque estava usando a direcao antiga, que era
+em texto. agora, é um enum contendo objetos do tipo Posicao. resolvido isso.
+agora, vamos fazer aceitar qualquer das 4 direções.
+
+devo criar um teste que especifique a possibilidade de converter direção em
+texto para objeto? estou usando assim, mas não tem teste pra isso.
+
+## próximos passos
+
+
