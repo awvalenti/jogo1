@@ -518,7 +518,8 @@ inicial, direção(ões) e estado final.
 - [x] integrar com javascript (corrigir integração que parou de funcionar)
 - [x] aceitar 4 direções
 - [x] especificar (com teste) que Posicao permite de 0 a 99
-
+- [x] refatorar tabuleiro_spec para fazer um gerador de testes
+  - função receberá estado incial, direção(ões) e estado final
 
 ## anotações
 
@@ -536,4 +537,5 @@ especifiquei posição, mesmo.
 
 ## próximos passos
 
+- cogitar transformar tabuleiro em imutável
 
